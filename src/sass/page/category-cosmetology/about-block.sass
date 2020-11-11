@@ -1,0 +1,73 @@
+section.about-block
+  display: flex
+  flex-direction: column
+  background: url("../img/svg/about-us_BG.svg") 495px top / 445px 328px no-repeat
+  margin-bottom: 64px
+  .text
+    position: relative
+    .links
+      float: right
+      width: 261px
+      height: 224px
+      margin: 0 0 78px 118px
+      ul
+        padding: 0
+        margin: 0
+        list-style: none
+        li
+          color: $white-text-color
+          display: flex
+          align-items: center
+          justify-content: center
+          border-radius: 50%
+          background-color: $first-additional-color
+          position: absolute
+          font-size: 14px
+          line-height: 32px
+          a
+            color: inherit
+            text-decoration: none
+            position: relative
+            text-align: center
+            &:after
+              content: ''
+              position: absolute
+              bottom: -28px
+              right: 0
+              left: 0
+              margin: auto
+              width: 24px
+              height: 24px
+              background: url("../img/svg/arrow-right_white.svg") center center / 100% 100% no-repeat
+              @media (max-width: 767px)
+                left: auto
+                bottom: 0
+                top: 0
+                right: 35px
+          @media (min-width: 768px)
+            &:nth-child(1)
+              top: 0
+              right: 194px
+              width: 120px
+              height: 120px
+              font-weight: 300
+              font-size: 24px
+              line-height: 33px
+              a
+                top: -6px
+            &:nth-child(2)
+              top: 104px
+              right: 53px
+              width: 120px
+              height: 120px
+              font-weight: 400
+              color: $text-color
+              background: $second-color
+              a
+                &:after
+                  content: none
+    p
+      font-size: 18px
+      line-height: 28px
+      color: $text-color
+      margin: 0 0 30px

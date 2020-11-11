@@ -1,0 +1,45 @@
+section.top-video-block
+  display: flex
+  flex-direction: column
+  align-items: center
+  margin-bottom: 65px
+  h2
+    text-align: center
+    margin-bottom: 64px
+  .video
+    width: 100%
+    height: auto
+    position: relative
+    overflow: hidden
+    display: flex
+    video
+      width: auto
+      height: 845px
+      margin: 0 auto
+    .poster
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 0
+      padding-bottom: 45%
+      img
+        position: absolute
+        top: 0
+        bottom: 0
+        width: 100%
+        height: 100%
+        object-fit: cover
+        object-position: center
+    .play-btn
+      position: absolute
+      width: 100%
+      height: 100%
+      top: 0
+      left: 0
+      background: url("../img/svg/video-play-btn2.svg") center center / 120px 120px no-repeat
+      cursor: pointer
+      @media (max-width: 767px)
+        background-size: 60px 60px
+      &.active
+        opacity: 0

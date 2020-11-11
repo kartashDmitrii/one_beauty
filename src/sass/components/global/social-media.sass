@@ -1,0 +1,54 @@
+section.social-media
+  display: flex
+  flex-direction: column
+  margin-bottom: 64px
+  .social
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 32px 0
+    box-shadow: 0 1px 0 #EEEEEE
+    margin-bottom: 32px
+    @media (max-width: 1023px)
+      flex-direction: column
+    .name
+      font-weight: 300
+      font-size: 28px
+      line-height: 33px
+      margin: 0
+      @media (max-width: 1023px)
+        margin-bottom: 15px
+    .refs
+      display: flex
+      align-items: center
+      @media (max-width: 480px)
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-gap: 30px
+      a
+        display: flex
+        align-items: center
+        margin-right: 32px
+        font-weight: 700
+        font-size: 14px
+        line-height: 16px
+        text-decoration: none
+        color: $text-color
+        @media (max-width: 480px)
+          width: 100%
+          margin-right: 0
+        img
+          width: 48px
+          height: 48px
+          margin-right: 16px
+        &:last-child
+          margin-right: 0
+  .images
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-gap: 30px
+    grid-auto-rows: 1fr
+    @media (max-width: 767px)
+      grid-template-columns: 1fr 1fr
+    @media (max-width: 480px)
+      grid-template-columns: 1fr

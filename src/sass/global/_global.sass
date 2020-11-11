@@ -1,0 +1,70 @@
+body
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+  font-family: Raleway
+  &.hidden
+    max-height: 100vh
+    overflow: hidden
+  *
+    -webkit-tap-highlight-color: transparent
+  main
+    flex: 1
+
+img
+  width: 100%
+  height: auto
+
+.btn
+  width: 140px
+  padding: 20px 14px
+  box-sizing: border-box
+  display: flex
+  align-items: center
+  justify-content: center
+  text-decoration: none
+  background: $second-additional-color
+  font-weight: 700
+  font-size: 14px
+  line-height: 16px
+  color: $text-color
+  border: none
+  outline: none
+  cursor: pointer
+
+.section-title
+  font-weight: 900
+  font-size: 64px
+  line-height: 75px
+  color: $text-color
+  margin: 0
+  @media (max-width: 480px)
+    font-size: 42px
+    line-height: 46px
+
+.text-block
+  font-weight: 400
+  font-size: 18px
+  line-height: 28px
+  color: $text-color
+  margin: 0
+  *
+    font-weight: 400
+    font-size: 18px
+    line-height: 28px
+    color: $text-color
+    margin: 0 0 10px
+  p
+    font-weight: 400
+    font-size: 18px
+    line-height: 28px
+    color: $text-color
+    margin: 0 0 10px
+  b, strong
+    font-weight: 700
+    font-size: 18px
+    line-height: 28px
+    color: $text-color
+    margin: 0 0 10px
+  *:last-child
+    margin-bottom: 0

@@ -1,0 +1,95 @@
+section.top-block
+  display: flex
+  position: static
+  justify-content: flex-end
+  margin-bottom: 120px
+  @media (max-width: 1199px)
+    flex-direction: column-reverse
+  @media (max-width: 1023px)
+    margin-bottom: 60px
+  @media (max-width: 480px)
+    margin-bottom: 20px
+  .video
+    position: absolute
+    left: 0
+    cursor: pointer
+    width: 55%
+    max-width: 1040px
+    height: auto
+    z-index: 1
+    @media (max-width: 1450px)
+      width: 65%
+    @media (max-width: 1199px)
+      position: relative
+      width: 100%
+    video
+      width: 100%
+      height: auto
+      outline: none
+    .play-btn
+      position: absolute
+      width: 100%
+      height: 100%
+      top: 0
+      left: 0
+      background: url("../img/svg/video-play-btn.svg") center center / 120px 120px no-repeat
+      cursor: pointer
+      @media (max-width: 767px)
+        background-size: 60px 60px
+      &.active
+        opacity: 0
+  .text
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    position: relative
+    z-index: 2
+    width: 635px
+    min-width: 635px
+    user-select: none
+    pointer-events: none
+    @media (max-width: 1199px)
+      width: 100%
+    @media (max-width: 767px)
+      min-width: auto
+      margin-bottom: 15px
+    h2
+      font-size: 120px
+      line-height: 120px
+      margin: 95px 0
+      max-width: 635px
+      @media (max-width: 1199px)
+        max-width: none
+        margin: 40px 0
+        font-size: 95px
+        line-height: 95px
+      @media (max-width: 767px)
+        font-size: 68px
+        line-height: 68px
+      @media (max-width: 480px)
+        margin: 10px 0
+        font-size: 48px
+        line-height: 48px
+      span
+        font-weight: 900
+    p
+      align-self: flex-end
+      position: relative
+      max-width: 255px
+      font-weight: 300
+      font-size: 28px
+      line-height: 33px
+      margin: 0
+      @media (max-width: 1199px)
+        max-width: none
+      &:before
+        content: ''
+        position: absolute
+        z-index: -1
+        top: 0
+        bottom: 0
+        right: calc(100% + 30px)
+        margin: auto
+        height: 1px
+        width: 350px
+        background: $text-color

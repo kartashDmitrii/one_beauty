@@ -1,0 +1,117 @@
+section.foundation
+  display: flex
+  flex-direction: column
+  margin-bottom: 120px
+  @media (max-width: 1023px)
+    margin-bottom: 60px
+  .info
+    display: flex
+    margin-bottom: 64px
+    @media (max-width: 1199px)
+      flex-direction: column
+    .text
+      flex: 1
+      display: flex
+      flex-direction: column
+      max-width: 445px
+      margin-right: 36px
+      @media (max-width: 1199px)
+        max-width: 60%
+        margin-bottom: 10px
+      @media (max-width: 767px)
+        max-width: none
+        width: 100%
+      .section-title
+        margin-bottom: 30px
+      p
+        font-size: 18px
+        line-height: 28px
+        margin: 0
+    .desc
+      display: flex
+      @media (max-width: 1199px)
+        align-self: flex-end
+      @media (max-width: 767px)
+        align-items: center
+      .four
+        display: flex
+        position: relative
+        padding-right: 34px
+        margin-right: 16px
+        @media (max-width: 767px)
+          align-items: center
+        .image
+          width: 134px
+          height: 198px
+          @media (max-width: 767px)
+            width: 70px
+            height: 120px
+            margin-bottom: 15px
+        p
+          position: absolute
+          bottom: 0
+          right: 0
+          margin: auto
+          font-size: 15px
+          line-height: 18px
+          letter-spacing: 1em
+          color: $text-color
+          transform: rotate(-90deg)
+          height: 18px
+          width: 18px
+          @media (max-width: 767px)
+            letter-spacing: 3px
+            transform: none
+            width: auto
+      &>.image
+        width: 445px
+        height: 200px
+        @media (max-width: 767px)
+          width: auto
+          height: auto
+  .features
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-gap: 30px
+    grid-auto-rows: 1fr
+    @media (max-width: 1023px)
+      grid-template-columns: 1fr 1fr
+    @media (max-width: 480px)
+      grid-template-columns: 1fr
+    .block
+      height: 255px
+      padding: 16px
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      box-sizing: border-box
+      border: 1px solid
+      border-image-slice: 1
+      border-image-source: linear-gradient(133.17deg, #76DACE 0%, #1C9BBE 100%)
+      transition: all .3s
+      img
+        width: 88px
+        height: 88px
+        margin-bottom: 24px
+      .name
+        margin: 0
+        font-weight: 300
+        font-size: 28px
+        line-height: 33px
+      .desc
+        font-size: 14px
+        line-height: 21px
+        text-align: center
+        display: none
+      &:hover
+        transform: scale(1.25)
+        border: none
+        box-shadow: 0 24px 24px rgba(0, 0, 0, 0.08)
+        border-radius: 10px
+        *
+          transform: scale(.8)
+        img
+          margin-bottom: 0
+        .desc
+          display: block

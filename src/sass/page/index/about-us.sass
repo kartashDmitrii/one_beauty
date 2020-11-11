@@ -1,0 +1,131 @@
+section.about-us
+  background: url("../img/svg/about-us_BG.svg") center center / 445px 328px no-repeat
+  display: flex
+  justify-content: space-between
+  margin-bottom: 120px
+  @media (max-width: 1023px)
+    margin-bottom: 60px
+  @media (max-width: 767px)
+    flex-direction: column
+    background: none
+  @media (max-width: 480px)
+    margin-bottom: 20px
+  .info
+    display: flex
+    flex-direction: column
+    min-width: 540px
+    width: 540px
+    margin-right: 125px
+    @media (max-width: 767px)
+      margin-right: 0
+      margin-bottom: 16px
+      width: 100%
+      min-width: auto
+    .section-title
+      margin-bottom: 64px
+      @media (max-width: 480px)
+        margin-bottom: 16px
+  .refs
+    position: relative
+    flex: 1
+    ul
+      padding: 0
+      margin: 0
+      list-style: none
+      @media (max-width: 767px)
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-gap: 15px
+      @media (max-width: 480px)
+        grid-template-columns: 1fr
+      li
+        font-size: 28px
+        line-height: 33px
+        color: $white-text-color
+        display: flex
+        align-items: center
+        justify-content: center
+        border-radius: 50%
+        background-color: $first-additional-color
+        position: absolute
+        @media (max-width: 1199px)
+          font-size: 21px
+          line-height: 24px
+        @media (max-width: 767px)
+          position: relative
+          padding: 10px 60px 10px 10px
+          border-radius: 5px
+          &:last-child
+            margin: 0
+            color: #000
+            background-color: $second-color
+            padding: 10px
+            a:after
+              content: none
+        a
+          color: inherit
+          text-decoration: none
+          position: relative
+          @media (max-width: 767px)
+            position: static
+          &:after
+            content: ''
+            position: absolute
+            bottom: -28px
+            right: 0
+            left: 0
+            margin: auto
+            width: 24px
+            height: 24px
+            background: url("../img/svg/arrow-right_white.svg") center center / 100% 100% no-repeat
+            @media (max-width: 767px)
+              left: auto
+              bottom: 0
+              top: 0
+              right: 35px
+        @media (min-width: 768px)
+          &:nth-child(1)
+            top: 0
+            right: 285px
+            width: 160px
+            height: 160px
+            font-weight: 900
+            @media (max-width: 1199px)
+              width: 120px
+              height: 120px
+          &:nth-child(2)
+            top: 40px
+            right: 135px
+            width: 120px
+            height: 120px
+            font-weight: 300
+            @media (max-width: 1199px)
+              width: 95px
+              height: 95px
+          &:nth-child(3)
+            bottom: 0
+            right: 0
+            width: 160px
+            height: 160px
+            font-weight: 900
+            @media (max-width: 1199px)
+              width: 120px
+              height: 120px
+          &:nth-child(4)
+            bottom: 40px
+            right: 190px
+            width: 120px
+            height: 120px
+            font-size: 14px
+            line-height: 32px
+            color: #000
+            background-color: $second-color
+            @media (max-width: 1199px)
+              width: 95px
+              height: 95px
+            @media (max-width: 1023px)
+              right: 20px
+              bottom: 130px
+            a
+              &:after
+                content: none

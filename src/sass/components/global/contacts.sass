@@ -1,0 +1,105 @@
+section.contacts
+  display: flex
+  flex-direction: column
+  margin-bottom: 120px
+  @media (max-width: 1023px)
+    margin-bottom: 60px
+  .section-title
+    margin-bottom: 64px
+    @media (max-width: 767px)
+      margin-bottom: 20px
+  .info
+    display: flex
+    @media (max-width: 1023px)
+      flex-direction: column
+    .map
+      width: calc(80% - 30px)
+      position: relative
+      margin-right: 30px
+      @media (max-width: 1023px)
+        width: 100%
+        margin-right: 0
+      #map
+        height: 350px
+      .address
+        position: absolute
+        top: 16px
+        left: 16px
+        background: #F5E4D7
+        margin: 0
+        padding: 14px 24px 14px 64px
+        font-weight: 500
+        font-size: 16px
+        line-height: 20px
+        &:before
+          content: ''
+          position: absolute
+          top: 0
+          bottom: 0
+          left: 24px
+          margin: auto
+          width: 24px
+          height: 24px
+          background: url("../img/svg/navigation.svg") center center / 100% 100% no-repeat
+        @media (max-width: 480px)
+          top: 0
+          left: 0
+    .desc
+      width: 20%
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      @media (max-width: 1023px)
+        margin-top: 40px
+        width: 100%
+      .text
+        font-size: 15px
+        line-height: 18px
+        letter-spacing: 1em
+        text-transform: uppercase
+        padding: 70px 70px 0 70px
+        margin: 0 0 70px 0
+        border-right: 1px solid #000000
+        position: relative
+        box-sizing: border-box
+        width: 100%
+        flex: 1
+        @media (max-width: 1023px)
+          display: none
+        &:before
+          content: ''
+          position: absolute
+          top: 0
+          left: 0
+          right: 0
+          margin: auto
+          width: 44px
+          height: 44px
+          background: url("../img/svg/map.svg") center center / 100% 100% no-repeat
+        span
+          display: block
+          transform: rotate(90deg)
+          @media (max-width: 1023px)
+            transform: none
+      .phone
+        margin-bottom: 24px
+        padding-left: 50px
+        position: relative
+        font-weight: 700
+        font-size: 14px
+        line-height: 16px
+        font-feature-settings: 'pnum' on, 'lnum' on
+        @media (max-width: 1023px)
+          display: none
+        &:before
+          content: ''
+          position: absolute
+          left: 10px
+          top: 0
+          bottom: 0
+          margin: auto
+          width: 24px
+          height: 24px
+          background: url("../img/svg/phone.svg") center center / 100% 100% no-repeat
+      .btn
+        width: 100%

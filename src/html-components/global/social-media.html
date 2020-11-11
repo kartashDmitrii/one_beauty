@@ -1,0 +1,24 @@
+<section class="social-media container">
+    <div class="social">
+        <p class="name">@@name</p>
+        <div class="refs">
+            <a href="">
+                <img src="img/svg/facebook_black.svg" alt="fb">
+                one.beauty
+            </a>
+            <a href="">
+                <img src="img/svg/youtube_black.svg" alt="fb">
+                one.beauty
+            </a>
+            <a href="">
+                <img src="img/svg/instagram_black.svg" alt="fb">
+                one.beauty
+            </a>
+        </div>
+    </div>
+    <div class="images">
+    @@for (var i = 0; i<images.length; i++){
+        <div class="img"><img src="`+images[i].src+`" alt="`+images[i].alt+`"></div>
+    }
+    </div>
+</section>

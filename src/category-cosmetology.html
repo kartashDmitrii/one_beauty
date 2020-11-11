@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OneBeauty</title>
+    <link rel="stylesheet" href="css/lib.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+@@include('./html-components/header.html')
+<main>
+    @@include('./html-components/global/breadcrumbs.html')
+
+    @@include('./html-components/global/top-video-block.html',{
+    "title": "Косметология",
+    "video-poster": "img/top-block-video_poster.png"
+    })
+
+    @@include('./html-components/global/dont-lose.html')
+
+    @@include('./html-components/category-cosmetology/about-block.html')
+
+    @@include('./html-components/global/sub-categories.html')
+
+    @@include('./html-components/global/achievements.html')
+
+    @@include('./html-components/global/our-specialists.html')
+
+    @@include('./html-components/global/social-media.html', {
+    "name": "Клиника в социальных сетях",
+    "images": [
+    {
+    "src": "img/social4.png",
+    "alt": "social4"
+    },
+    {
+    "src": "img/social5.png",
+    "alt": "social5"
+    },
+    {
+    "src": "img/social6.png",
+    "alt": "social6"
+    },
+    ]
+    })
+
+    @@include('./html-components/global/contacts.html')
+</main>
+@@include('./html-components/footer.html')
+
+<script src="js/lib.min.js"></script>
+<script src="js/main-min.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtyoEm_ojya8YpKRs75HgeAJR-Iv4c-PA&callback=initMap"></script>
+</body>
+</html>
