@@ -1,0 +1,82 @@
+section.price
+  display: flex
+  flex-direction: column
+  .section-title
+    margin-bottom: 56px
+  .content
+    display: flex
+    align-items: center
+    justify-content: space-between
+    .info
+      flex: 1
+      ul
+        display: flex
+        flex-direction: column
+        padding: 0
+        margin: 0
+        list-style: none
+        li
+          display: flex
+          justify-content: space-between
+          align-items:
+          padding-bottom: 20px
+          margin-bottom: 42px
+          border-bottom: 1px solid $second-additional-color
+          &:last-child
+            margin-bottom: 0
+          a
+            font-weight: 600
+            font-size: 20px
+            line-height: 23px
+            color: $first-additional-color
+          p
+            margin: 0
+            font-weight: 500
+            font-size: 16px
+            line-height: 19px
+            font-feature-settings: 'pnum' on, 'lnum' on
+            color: $text-color
+    .sale
+      margin-left: 125px
+      width: 445px
+      height: 505px
+      padding: 48px 95px
+      box-sizing: border-box
+      transition: all .3s
+      background: $first-additional-color
+      .btn
+        background: $second-additional-color
+        color: $text-color
+      @media (max-width: 480px)
+        width: 100%
+        padding: 16px 32px
+      a
+        width: 100%
+        height: 100%
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+        color: inherit
+        text-decoration: none
+      .image
+        width: 60px
+        height: 60px
+        margin-bottom: 24px
+      .time
+        font-weight: 900
+        font-size: 64px
+        line-height: 75px
+        margin: 0 0 32px
+        font-feature-settings: 'pnum' on, 'lnum' on
+      .name
+        font-weight: 300
+        font-size: 28px
+        line-height: 33px
+        margin: 0 0 32px
+      .date
+        font-weight: 700
+        font-size: 14px
+        line-height: 16px
+        margin: 0 0 47px
+      .btn
+        width: 100%

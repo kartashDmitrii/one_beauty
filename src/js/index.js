@@ -9,7 +9,7 @@ if (document.querySelector('.top-block .video video')) {
 
 if (document.querySelector('.slider-full-page')){
     document.querySelectorAll('.slider-full-page').forEach( slider => {
-        let sliderContainer = slider.querySelector('.container')
+        let sliderContainer = slider.querySelector('.container');
         let siema = new Siema({
             selector: sliderContainer,
             duration: 200,
@@ -29,13 +29,13 @@ if (document.querySelector('.slider-full-page')){
                     this.selector.style.overflow = 'initial'
                 }
                 this.selector.querySelectorAll('.slide').forEach( (elem, index) => {
-                    let dot = document.createElement('button')
-                    dot.classList.add('dot')
-                    dot.innerText = elem.querySelector('.name').innerHTML
-                    this.selector.closest('.tab').querySelector('.slider-btns .dots').appendChild(dot)
+                    let dot = document.createElement('button');
+                    dot.classList.add('dot');
+                    dot.innerText = elem.querySelector('.name').innerHTML;
+                    this.selector.closest('.tab').querySelector('.slider-btns .dots').appendChild(dot);
                     dot.addEventListener('click', ()=>{siema.goTo(index)})
-                })
-                this.selector.closest('.tab').querySelector('.slider-btns .btn-left').addEventListener('click', ()=>{siema.prev()})
+                });
+                this.selector.closest('.tab').querySelector('.slider-btns .btn-left').addEventListener('click', ()=>{siema.prev()});
                 this.selector.closest('.tab').querySelector('.slider-btns .btn-right').addEventListener('click', ()=>{siema.next()})
             },
             onChange: function (){
@@ -66,28 +66,28 @@ if (document.querySelector('.slider-full-page-solo')){
                     this.selector.style.overflow = 'initial'
                 }
                 this.selector.querySelectorAll('.slide').forEach( (elem, index) => {
-                    let dot = document.createElement('button')
-                    dot.classList.add('dot')
-                    dot.innerText = elem.dataset.dotName
-                    this.selector.closest('.tab').querySelector('.slider-btns .dots').appendChild(dot)
+                    let dot = document.createElement('button');
+                    dot.classList.add('dot');
+                    dot.innerText = elem.dataset.dotName;
+                    this.selector.closest('.tab').querySelector('.slider-btns .dots').appendChild(dot);
                     dot.addEventListener('click', ()=>{siema.goTo(index)})
-                })
-                this.selector.closest('.tab').querySelector('.slider-btns .btn-left').addEventListener('click', ()=>{siema.prev()})
+                });
+                this.selector.closest('.tab').querySelector('.slider-btns .btn-left').addEventListener('click', ()=>{siema.prev()});
                 this.selector.closest('.tab').querySelector('.slider-btns .btn-right').addEventListener('click', ()=>{siema.next()})
             },
             onChange: function (){
                 if (this.selector.querySelector('.slide.current')){
                     this.selector.querySelector('.slide.current').classList.remove('current')
                 }
-                this.selector.querySelectorAll('.slide')[siema.currentSlide].classList.add('current')
+                this.selector.querySelectorAll('.slide')[siema.currentSlide].classList.add('current');
                 if (this.selector.closest('.tab').querySelector('.dot.current')){
                     this.selector.closest('.tab').querySelector('.dot.current').classList.remove('current')
                 }
-                this.selector.closest('.tab').querySelectorAll('.dot')[siema.currentSlide].classList.add('current')
-                let img = this.selector.closest('.slider-full-page-solo').querySelector('.bg-img img')
-                img.style.opacity = '0'
+                this.selector.closest('.tab').querySelectorAll('.dot')[siema.currentSlide].classList.add('current');
+                let img = this.selector.closest('.slider-full-page-solo').querySelector('.bg-img img');
+                img.style.opacity = '0';
                 setTimeout(()=>{
-                    img.src = this.selector.querySelectorAll('.slide')[siema.currentSlide].dataset.img
+                    img.src = this.selector.querySelectorAll('.slide')[siema.currentSlide].dataset.img;
                     img.style.opacity = '1'
                 }, 150)
             }
@@ -97,7 +97,7 @@ if (document.querySelector('.slider-full-page-solo')){
 
 document.querySelectorAll('.tabs').forEach( tabs => {
     new Tabs(tabs.querySelectorAll('.tab-links .tab'), tabs.querySelectorAll('.tab-blocks .tab'))
-})
+});
 
 if (document.querySelector('.comments .slider')){
     let siema = new Siema({
@@ -112,7 +112,7 @@ if (document.querySelector('.comments .slider')){
         loop: false,
         rtl: false,
         onInit: function () {
-            this.selector.closest('.comments').querySelector('.slider-btns .left').addEventListener('click', ()=>{siema.prev()})
+            this.selector.closest('.comments').querySelector('.slider-btns .left').addEventListener('click', ()=>{siema.prev()});
             this.selector.closest('.comments').querySelector('.slider-btns .right').addEventListener('click', ()=>{siema.next()})
         },
         onChange: function () {
@@ -121,7 +121,8 @@ if (document.querySelector('.comments .slider')){
 }
 
 if (document.querySelector('header')) {
-    new HeaderBurger(document.querySelector('.mobile-burger'), document.querySelector('.bottom-header'))
-
-    new headerLanguage(document.querySelector('.header .language'))
+    new HeaderBurger(document.querySelector('.mobile-burger'), [...document.querySelectorAll('header .mobile')], document.querySelector('header .close'));
+    if (window.screen.width > 576) {
+        new headerLanguage(document.querySelector('.header .language'))
+    }
 }

@@ -1,0 +1,65 @@
+section.top-text-block
+  display: flex
+  flex-direction: column
+  h2
+    font-weight: 900
+    font-size: 48px
+    line-height: 56px
+    color: $text-color
+    margin-bottom: 60px
+    text-align: center
+  .image
+    position: relative
+    display: flex
+    overflow: hidden
+    margin-bottom: 40px
+    &.right
+      justify-content: flex-end
+    &.left
+      justify-content: flex-start
+    img
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      object-fit: cover
+      object-position: center
+    .block
+      max-width: 775px
+      box-sizing: border-box
+      margin: 125px 0
+      background: rgba(255, 255, 255, 0.8)
+      backdrop-filter: blur(15px)
+      padding: 85px 40px 80px 60px
+      display: flex
+      flex-direction: column
+      .title
+        font-size: 76px
+        line-height: 120px
+        color: $text-color
+        margin: 0 0 14px
+        b
+          font-weight: 900
+      .text
+        max-width: 470px
+        font-size: 20px
+        line-height: 28px
+        color: $text-color
+        margin: 0 0 15px
+      .price
+        font-size: 30px
+        line-height: 32px
+        color: $text-color
+        margin: 0
+      &.solo-title
+        align-items: center
+        justify-content: center
+        padding: 132px 100px
+        .title
+          font-size: 86px
+          line-height: 90px
+          color: $text-color
+          margin: 0
+          b
+            font-weight: 900

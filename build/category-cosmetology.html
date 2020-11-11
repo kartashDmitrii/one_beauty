@@ -14,7 +14,7 @@
     <div class="top-header">
         <div class="container">
             <a class="phone" href="tel:+380987236802">098 723 68 02</a>
-            <div class="left-side">
+            <div class="left-side mobile">
                 <div class="language">
                     <p class="current">РУС</p>
                     <ul>
@@ -34,7 +34,10 @@
     </div>
     <div class="bottom-header">
         <div class="container">
-            <div class="left-side">
+            <a href="/" class="logo">
+                <img src="img/logo.png" alt="logo">
+            </a>
+            <div class="mobile-top mobile">
                 <a href="/" class="logo">
                     <img src="img/logo.png" alt="logo">
                 </a>
@@ -44,17 +47,15 @@
                         <li><a href="#">Клиника</a></li>
                     </ul>
                 </div>
-            </div>
-            <div class="right-side">
-                <ul class="links">
+                <ul class="links mobile">
                     <li><a href="#">О нас</a></li>
                     <li><a href="#">Прайс</a></li>
                     <li><a href="#">Акции</a></li>
                     <li><a href="#">Контакты</a></li>
                 </ul>
-                <button class="btn">Записаться</button>
                 <div class="close"></div>
             </div>
+            <button class="btn">Записаться</button>
         </div>
     </div>
 </header>
@@ -80,7 +81,7 @@
 
     <section class="dont-lose tabs">
     <div class="head container">
-        <h2 class="section-title">Не пропусти</h2>
+        <span class="section-title">Не пропусти</span>
         <ul class="tab-links">
             <li class="tab current">ВЕЧЕРИНКИ</li>
             <li class="tab">АКЦИИ</li>
@@ -332,7 +333,7 @@
 
     <section class="achievements">
     <div class="container">
-        <h2 class="section-title">За 2019 мы сделали <img src="img/love-smile.png" alt="#"></h2>
+        <span class="section-title">За 2019 мы сделали <img src="img/love-smile.png" alt="#"></span>
         <div class="achievement">
             <div class="elem">
                 <p class="count">320</p>
@@ -359,7 +360,7 @@
 </section>
 
     <section class="our-specialists container tabs">
-    <h2 class="section-title">Наши специалисты</h2>
+    <span class="section-title">Наши специалисты</span>
     <div class="tab-blocks">
         <div class="tab current">
             <div class="slider">
@@ -642,10 +643,12 @@
 </section>
 
     <section class="contacts container">
-    <h2 class="section-title">Контакты</h2>
+    <span class="section-title">Контакты</span>
     <div class="info">
         <div class="map">
-            <div id="map"></div>
+            <div id="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2541.5321428703473!2d30.535193115730674!3d50.43118797947272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cf0f40c4dd7d%3A0x6d3cf7c605088322!2z0YPQuy4g0JDRgNGB0LXQvdCw0LvRjNC90LDRjywgMTgsINCa0LjQtdCyLCAwMjAwMA!5e0!3m2!1sru!2sua!4v1605094567672!5m2!1sru!2sua" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
             <p class="address">г. Киев, Арсенальная 18</p>
         </div>
         <div class="desc">
@@ -692,6 +695,5 @@
 
 <script src="js/lib.min.js"></script>
 <script src="js/main-min.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtyoEm_ojya8YpKRs75HgeAJR-Iv4c-PA&callback=initMap"></script>
 </body>
 </html>
