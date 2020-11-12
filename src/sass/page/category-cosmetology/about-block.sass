@@ -1,8 +1,17 @@
 section.about-block
   display: flex
   flex-direction: column
-  background: url("../img/svg/about-us_BG.svg") 495px top / 445px 328px no-repeat
   margin-bottom: 64px
+  @media (max-width: 480px)
+    margin-top: 40px
+  &:before
+    content: ''
+    position: absolute
+    top: 0
+    right: 173px
+    width: 445px
+    height: 328px
+    background: url("../img/svg/about-us_BG.svg") center center / 100% 100%  no-repeat
   .text
     position: relative
     .links
@@ -10,10 +19,21 @@ section.about-block
       width: 261px
       height: 224px
       margin: 0 0 78px 118px
+      @media (max-width: 767px)
+        width: 100%
+        height: auto
+        float: none
+        margin: 0 0 20px
       ul
         padding: 0
         margin: 0
         list-style: none
+        @media (max-width: 767px)
+          display: grid
+          grid-template-columns: 1fr 1fr
+          grid-gap: 15px
+        @media (max-width: 480px)
+          grid-template-columns: 1fr
         li
           color: $white-text-color
           display: flex
@@ -24,11 +44,20 @@ section.about-block
           position: absolute
           font-size: 14px
           line-height: 32px
+          @media (max-width: 1199px)
+            font-size: 21px
+            line-height: 24px
+          @media (max-width: 767px)
+            position: relative
+            padding: 10px 60px 10px 10px
+            border-radius: 5px
           a
             color: inherit
             text-decoration: none
             position: relative
             text-align: center
+            @media (max-width: 767px)
+              position: static
             &:after
               content: ''
               position: absolute

@@ -34,11 +34,24 @@ section.top-text-block
       padding: 85px 40px 80px 60px
       display: flex
       flex-direction: column
+      @media (max-width: 1200px)
+        max-width: 650px
+        padding: 45px 20px 40px 30px
+      @media (max-width: 767px)
+        max-width: 50%
+      @media (max-width: 568px)
+        max-width: none
+        width: 100%
+        margin: 0
+        padding: 100px 20px
       .title
         font-size: 76px
         line-height: 120px
         color: $text-color
         margin: 0 0 14px
+        @media (max-width: 767px)
+          font-size: 42px
+          line-height: 46px
         b
           font-weight: 900
       .text
@@ -56,10 +69,17 @@ section.top-text-block
         align-items: center
         justify-content: center
         padding: 132px 100px
+        @media (max-width: 1200px)
+          padding: 80px 50px
+        @media (max-width: 576px)
+          padding: 100px 20px
         .title
           font-size: 86px
           line-height: 90px
           color: $text-color
           margin: 0
+          @media (max-width: 767px)
+            font-size: 42px
+            line-height: 46px
           b
             font-weight: 900

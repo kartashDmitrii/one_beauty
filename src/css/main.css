@@ -122,6 +122,16 @@
     margin-left: 120px;
     max-width: none;
     width: calc(100% - 240px); }
+    @media (max-width: 1199px) {
+      .container.container-big {
+        width: calc(100% - 30px);
+        margin-left: 15px;
+        margin-right: 15px; } }
+    @media (max-width: 576px) {
+      .container.container-big {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0; } }
 
 .container-fluid {
   width: 100%;
@@ -174,11 +184,12 @@ img {
   font-size: 64px;
   line-height: 75px;
   color: #000000;
-  margin: 0; }
+  margin: 0;
+  display: flex; }
   @media (max-width: 480px) {
     .section-title {
-      font-size: 42px;
-      line-height: 46px; } }
+      font-size: 40px;
+      line-height: 44px; } }
 
 .text-block {
   font-weight: 400;
@@ -213,7 +224,14 @@ header {
   header .top-header {
     padding-top: 20px;
     background-color: #F5E4D7;
-    padding-bottom: 20px; }
+    padding-bottom: 20px;
+    height: 65px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 9; }
     header .top-header .container {
       display: flex;
       justify-content: space-between;
@@ -258,7 +276,8 @@ header {
             box-sizing: border-box;
             background: #FFFFFF;
             flex-direction: column-reverse;
-            transition: left .3s; }
+            transition: left .3s;
+            z-index: 10; }
             header .top-header .container .left-side.active {
               left: 0; } }
         header .top-header .container .left-side .language {
@@ -378,6 +397,7 @@ header {
           header .top-header .container .mobile-burger {
             display: block; } }
   header .bottom-header {
+    margin-top: 65px;
     padding: 32px 0;
     box-shadow: 0 1px 0 #EEEEEE; }
     header .bottom-header .container {
@@ -393,8 +413,7 @@ header {
         margin-right: 56px; }
         @media (max-width: 1023px) {
           header .bottom-header .container .logo {
-            margin-right: 0;
-            margin-bottom: 15px; } }
+            margin-right: 0; } }
       header .bottom-header .container .mobile-top {
         display: flex;
         align-items: center;
@@ -416,10 +435,11 @@ header {
             background: #FFFFFF;
             flex-direction: column;
             padding-top: 20px;
-            transition: left .3s; }
+            transition: left .3s;
+            z-index: 10; }
             header .bottom-header .container .mobile-top.active {
               left: 0; } }
-        @media (max-width: 767px) {
+        @media (max-width: 576px) {
           header .bottom-header .container .mobile-top {
             height: calc(100vh - 95px); } }
         header .bottom-header .container .mobile-top .close {
@@ -1092,24 +1112,27 @@ section.top-video-block {
   section.top-video-block h2 {
     text-align: center;
     margin-bottom: 64px; }
+    @media (max-width: 480px) {
+      section.top-video-block h2 {
+        margin-bottom: 20px; } }
   section.top-video-block .video {
     width: 100%;
     height: auto;
     position: relative;
     overflow: hidden;
     display: flex; }
-    section.top-video-block .video video {
-      width: auto;
-      height: 845px;
+    section.top-video-block .video iframe {
+      width: 100%;
       margin: 0 auto; }
-    section.top-video-block .video .poster {
+    section.top-video-block .video .image {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 0;
-      padding-bottom: 45%; }
-      section.top-video-block .video .poster img {
+      min-height: 360px;
+      padding-bottom: calc(45% - 360px); }
+      section.top-video-block .video .image img {
         position: absolute;
         top: 0;
         bottom: 0;
@@ -1117,6 +1140,10 @@ section.top-video-block {
         height: 100%;
         object-fit: cover;
         object-position: center; }
+        @media (max-width: 480px) {
+          section.top-video-block .video .image img {
+            height: 100%;
+            width: auto; } }
     section.top-video-block .video .play-btn {
       position: absolute;
       width: 100%;
@@ -1139,6 +1166,13 @@ section.sub-categories {
     grid-column-gap: 30px;
     grid-auto-rows: 1fr;
     grid-row-gap: 40px; }
+    @media (max-width: 1024px) {
+      section.sub-categories .grid {
+        grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 568px) {
+      section.sub-categories .grid {
+        grid-gap: 15px;
+        grid-template-columns: 1fr; } }
   section.sub-categories .elem {
     position: relative;
     height: 540px;
@@ -1147,6 +1181,15 @@ section.sub-categories {
     justify-content: flex-end;
     color: inherit;
     text-decoration: none; }
+    @media (max-width: 768px) {
+      section.sub-categories .elem {
+        height: 320px; } }
+    @media (max-width: 568px) {
+      section.sub-categories .elem {
+        height: 540px; } }
+    @media (max-width: 380px) {
+      section.sub-categories .elem {
+        height: 320px; } }
     section.sub-categories .elem img {
       position: absolute;
       top: 0;
@@ -1164,6 +1207,9 @@ section.sub-categories {
       align-items: center;
       box-sizing: border-box;
       width: 100%; }
+      @media (max-width: 640px) {
+        section.sub-categories .elem .info {
+          padding: 24px 10px; } }
       section.sub-categories .elem .info .name {
         margin: 0;
         font-weight: 300;
@@ -1179,7 +1225,8 @@ section.achievements {
   margin-top: 66px;
   position: relative;
   padding-bottom: 80px;
-  margin-bottom: 40px; }
+  margin-bottom: 40px;
+  overflow: hidden; }
   section.achievements:before {
     content: '';
     width: 445px;
@@ -1196,6 +1243,10 @@ section.achievements {
       justify-content: center;
       text-align: center;
       margin-bottom: 60px; }
+      @media (max-width: 480px) {
+        section.achievements .container .section-title {
+          flex-direction: column;
+          align-items: center; } }
       section.achievements .container .section-title img {
         width: 60px;
         height: 60px;
@@ -1205,12 +1256,21 @@ section.achievements {
     justify-content: space-around;
     flex-wrap: wrap;
     margin: 0 130px; }
+    @media (max-width: 1023px) {
+      section.achievements .achievement {
+        margin: 0; } }
     section.achievements .achievement .elem {
       width: 33%;
       display: flex;
       flex-direction: column;
       align-items: center;
       margin-bottom: 45px; }
+      @media (max-width: 767px) {
+        section.achievements .achievement .elem {
+          width: 50%; } }
+      @media (max-width: 480px) {
+        section.achievements .achievement .elem {
+          width: 100%; } }
       section.achievements .achievement .elem .count {
         font-weight: 700;
         font-size: 58px;
@@ -1227,19 +1287,22 @@ section.achievements {
 
 section.our-specialists {
   margin-bottom: 90px; }
-  section.our-specialists .tab-blocks .tab {
-    visibility: hidden;
-    opacity: 0;
-    max-height: 0;
-    overflow-y: hidden;
-    transition: all .3s;
-    position: relative; }
-    section.our-specialists .tab-blocks .tab.current {
-      opacity: 1;
-      max-height: none;
-      visibility: visible; }
+  section.our-specialists .section-title {
+    margin-bottom: 40px; }
+  section.our-specialists .tab-blocks {
+    display: flex;
+    flex-direction: column; }
+    section.our-specialists .tab-blocks .tab {
+      visibility: hidden;
+      opacity: 0;
+      max-height: 0;
+      position: relative; }
+      section.our-specialists .tab-blocks .tab.current {
+        opacity: 1;
+        max-height: none;
+        visibility: visible; }
   section.our-specialists .slider {
-    margin-bottom: 50px; }
+    margin: 0 -15px 50px; }
     section.our-specialists .slider .slide {
       margin: 0 15px;
       display: flex;
@@ -1285,6 +1348,9 @@ section.our-specialists {
       margin: 0;
       list-style: none;
       flex-wrap: wrap; }
+      @media (max-width: 480px) {
+        section.our-specialists .slider-btns .tab-links {
+          flex-direction: column; } }
       section.our-specialists .slider-btns .tab-links li {
         border-radius: 20px;
         padding: 12px 16px;
@@ -1292,16 +1358,27 @@ section.our-specialists {
         font-size: 14px;
         line-height: 16px;
         margin-right: 30px;
-        margin-bottom: 3px;
+        margin-bottom: 5px;
         background: transparent;
         cursor: pointer;
         text-transform: uppercase; }
+        @media (max-width: 1024px) {
+          section.our-specialists .slider-btns .tab-links li {
+            padding: 6px 8px;
+            margin-right: 15px; } }
+        @media (max-width: 480px) {
+          section.our-specialists .slider-btns .tab-links li {
+            width: max-content;
+            margin: 0 0 5xp; } }
         section.our-specialists .slider-btns .tab-links li:last-child {
           margin-right: 0; }
         section.our-specialists .slider-btns .tab-links li.current {
           background: #76DACE; }
     section.our-specialists .slider-btns .btns {
       display: flex; }
+      @media (max-width: 480px) {
+        section.our-specialists .slider-btns .btns {
+          display: none; } }
       section.our-specialists .slider-btns .btns .slider-btn {
         width: 65px;
         height: 65px;
@@ -1352,11 +1429,28 @@ section.top-text-block {
       padding: 85px 40px 80px 60px;
       display: flex;
       flex-direction: column; }
+      @media (max-width: 1200px) {
+        section.top-text-block .image .block {
+          max-width: 650px;
+          padding: 45px 20px 40px 30px; } }
+      @media (max-width: 767px) {
+        section.top-text-block .image .block {
+          max-width: 50%; } }
+      @media (max-width: 568px) {
+        section.top-text-block .image .block {
+          max-width: none;
+          width: 100%;
+          margin: 0;
+          padding: 100px 20px; } }
       section.top-text-block .image .block .title {
         font-size: 76px;
         line-height: 120px;
         color: #000000;
         margin: 0 0 14px; }
+        @media (max-width: 767px) {
+          section.top-text-block .image .block .title {
+            font-size: 42px;
+            line-height: 46px; } }
         section.top-text-block .image .block .title b {
           font-weight: 900; }
       section.top-text-block .image .block .text {
@@ -1374,11 +1468,21 @@ section.top-text-block {
         align-items: center;
         justify-content: center;
         padding: 132px 100px; }
+        @media (max-width: 1200px) {
+          section.top-text-block .image .block.solo-title {
+            padding: 80px 50px; } }
+        @media (max-width: 576px) {
+          section.top-text-block .image .block.solo-title {
+            padding: 100px 20px; } }
         section.top-text-block .image .block.solo-title .title {
           font-size: 86px;
           line-height: 90px;
           color: #000000;
           margin: 0; }
+          @media (max-width: 767px) {
+            section.top-text-block .image .block.solo-title .title {
+              font-size: 42px;
+              line-height: 46px; } }
           section.top-text-block .image .block.solo-title .title b {
             font-weight: 900; }
 
@@ -1402,7 +1506,6 @@ section.top-block {
     cursor: pointer;
     width: 55%;
     max-width: 1040px;
-    height: auto;
     z-index: 1; }
     @media (max-width: 1450px) {
       section.top-block .video {
@@ -1411,9 +1514,24 @@ section.top-block {
       section.top-block .video {
         position: relative;
         width: 100%; } }
-    section.top-block .video video {
+    section.top-block .video .image {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      height: auto;
+      height: 100%;
+      overflow: hidden; }
+      section.top-block .video .image img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center; }
+    section.top-block .video iframe {
+      width: 100%;
+      height: 100%;
       outline: none; }
     section.top-block .video .play-btn {
       position: absolute;
@@ -2111,8 +2229,18 @@ section.employee {
 section.about-block {
   display: flex;
   flex-direction: column;
-  background: url("../img/svg/about-us_BG.svg") 495px top/445px 328px no-repeat;
   margin-bottom: 64px; }
+  @media (max-width: 480px) {
+    section.about-block {
+      margin-top: 40px; } }
+  section.about-block:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 173px;
+    width: 445px;
+    height: 328px;
+    background: url("../img/svg/about-us_BG.svg") center center/100% 100% no-repeat; }
   section.about-block .text {
     position: relative; }
     section.about-block .text .links {
@@ -2120,10 +2248,24 @@ section.about-block {
       width: 261px;
       height: 224px;
       margin: 0 0 78px 118px; }
+      @media (max-width: 767px) {
+        section.about-block .text .links {
+          width: 100%;
+          height: auto;
+          float: none;
+          margin: 0 0 20px; } }
       section.about-block .text .links ul {
         padding: 0;
         margin: 0;
         list-style: none; }
+        @media (max-width: 767px) {
+          section.about-block .text .links ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 15px; } }
+        @media (max-width: 480px) {
+          section.about-block .text .links ul {
+            grid-template-columns: 1fr; } }
         section.about-block .text .links ul li {
           color: #FFFFFF;
           display: flex;
@@ -2134,11 +2276,23 @@ section.about-block {
           position: absolute;
           font-size: 14px;
           line-height: 32px; }
+          @media (max-width: 1199px) {
+            section.about-block .text .links ul li {
+              font-size: 21px;
+              line-height: 24px; } }
+          @media (max-width: 767px) {
+            section.about-block .text .links ul li {
+              position: relative;
+              padding: 10px 60px 10px 10px;
+              border-radius: 5px; } }
           section.about-block .text .links ul li a {
             color: inherit;
             text-decoration: none;
             position: relative;
             text-align: center; }
+            @media (max-width: 767px) {
+              section.about-block .text .links ul li a {
+                position: static; } }
             section.about-block .text .links ul li a:after {
               content: '';
               position: absolute;
@@ -2212,6 +2366,8 @@ section.price {
             font-size: 20px;
             line-height: 23px;
             color: #1C9BBE; }
+            section.price .content .info ul li a:hover {
+              text-decoration: none; }
           section.price .content .info ul li p {
             margin: 0;
             font-weight: 500;

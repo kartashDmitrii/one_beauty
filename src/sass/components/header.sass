@@ -5,6 +5,13 @@ header
     padding-top: 20px
     background-color: $second-color
     padding-bottom: 20px
+    height: 65px
+    box-sizing: border-box
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    z-index: 9
     .container
       display: flex
       justify-content: space-between
@@ -48,6 +55,7 @@ header
           background: #FFFFFF
           flex-direction: column-reverse
           transition: left .3s
+          z-index: 10
           &.active
             left: 0
         .language
@@ -161,6 +169,7 @@ header
         @media (max-width: 767px)
           display: block
   .bottom-header
+    margin-top: 65px
     padding: 32px 0
     box-shadow: 0 1px 0 #EEEEEE
     .container
@@ -175,7 +184,6 @@ header
         margin-right: 56px
         @media (max-width: 1023px)
           margin-right: 0
-          margin-bottom: 15px
       .mobile-top
         display: flex
         align-items: center
@@ -196,9 +204,10 @@ header
           flex-direction: column
           padding-top: 20px
           transition: left .3s
+          z-index: 10
           &.active
             left: 0
-        @media (max-width: 767px)
+        @media (max-width: 576px)
           height: calc(100vh - 95px)
         .close
           display: none

@@ -1,11 +1,6 @@
-import videoPlayer from "./components/global/top-block_video";
 import Tabs from "./components/tabs";
 import HeaderBurger from "./components/global/headerBurger";
 import headerLanguage from "./components/global/headerLanguage";
-
-if (document.querySelector('.top-block .video video')) {
-    new videoPlayer(document.querySelector('.top-block .video video'), document.querySelector('.top-block .video .play-btn'))
-}
 
 if (document.querySelector('.slider-full-page')){
     document.querySelectorAll('.slider-full-page').forEach( slider => {
@@ -125,4 +120,9 @@ if (document.querySelector('header')) {
     if (window.screen.width > 576) {
         new headerLanguage(document.querySelector('.header .language'))
     }
+}
+if (document.querySelector('#video')) {
+    window.addEventListener('resize', function () {
+        document.querySelector('#video').style.minHeight = `${Math.round(.45 * document.querySelector('#video').offsetWidth)}px`
+    })
 }

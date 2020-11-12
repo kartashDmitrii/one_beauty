@@ -1,9 +1,4 @@
-import videoPlayer from "./components/global/top-block_video";
 import Tabs from "./components/tabs";
-
-if (document.querySelector('.top-video-block .video video')) {
-    new videoPlayer(document.querySelector('.top-video-block .video video'), document.querySelector('.top-video-block .video .play-btn'))
-}
 
 if (document.querySelector('.our-specialists .slider')){
     document.querySelectorAll('.our-specialists .slider').forEach( slider => {
@@ -13,6 +8,7 @@ if (document.querySelector('.our-specialists .slider')){
             easing: 'ease-out',
             perPage: {
                 0: 1,
+                480: 2,
                 1024: 3
             },
             startIndex: 1,

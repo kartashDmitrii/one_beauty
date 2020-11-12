@@ -1,19 +1,21 @@
 section.our-specialists
   margin-bottom: 90px
+  .section-title
+    margin-bottom: 40px
   .tab-blocks
+    display: flex
+    flex-direction: column
     .tab
       visibility: hidden
       opacity: 0
       max-height: 0
-      overflow-y: hidden
-      transition: all .3s
       position: relative
       &.current
         opacity: 1
         max-height: none
         visibility: visible
   .slider
-    margin-bottom: 50px
+    margin: 0 -15px 50px
     .slide
       margin: 0 15px
       display: flex
@@ -58,6 +60,8 @@ section.our-specialists
       margin: 0
       list-style: none
       flex-wrap: wrap
+      @media (max-width: 480px)
+        flex-direction: column
       li
         border-radius: 20px
         padding: 12px 16px
@@ -65,16 +69,24 @@ section.our-specialists
         font-size: 14px
         line-height: 16px
         margin-right: 30px
-        margin-bottom: 3px
+        margin-bottom: 5px
         background: transparent
         cursor: pointer
         text-transform: uppercase
+        @media (max-width: 1024px)
+          padding: 6px 8px
+          margin-right: 15px
+        @media (max-width: 480px)
+          width: max-content
+          margin: 0 0 5xp
         &:last-child
           margin-right: 0
         &.current
           background: $second-additional-color
     .btns
       display: flex
+      @media (max-width: 480px)
+        display: none
       .slider-btn
         width: 65px
         height: 65px
