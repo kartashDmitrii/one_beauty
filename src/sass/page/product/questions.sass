@@ -1,0 +1,66 @@
+section.questions
+  display: flex
+  flex-direction: column
+  margin-bottom: 75px
+  .section-title
+    font-size: 44px
+    line-height: 52px
+    margin-bottom: 30px
+    @media (max-width: 480px)
+      font-size: 36px
+      line-height: 42px
+  .block
+    display: flex
+    flex-direction: column
+    .elem
+      display: flex
+      flex-direction: column
+      border-top: 2px solid $second-additional-color
+      &:last-child
+        border-bottom: 2px solid $second-additional-color
+      &>p
+        margin: 0
+        font-weight: 500
+        font-size: 22px
+        line-height: 28px
+        color: $text-color
+        padding: 33px 30px 33px 0
+        position: relative
+        cursor: pointer
+        @media (max-width: 480px)
+          font-size: 18px
+          line-height: 21px
+        &:after
+          content: ''
+          position: absolute
+          top: 0
+          right: 10px
+          bottom: 0
+          margin: auto
+          width: 15px
+          height: 15px
+          background: url("../img/svg/close.svg") center center / 100% 100% no-repeat
+          transition: transform .3s
+          transform: rotate(45deg)
+        &.active
+          &:after
+            transform: rotate(0)
+          & ~ .text
+            padding-bottom: 30px
+      .text
+        display: flex
+        flex-direction: column
+        overflow: hidden
+        transition: height .3s, padding-bottom .3s
+        height: 0
+        *
+          margin: 0 0 5px
+          *:last-child
+            margin-bottom: 0
+        p
+          font-size: 20px
+          line-height: 28px
+          color: $text-color
+          @media (max-width: 480px)
+            font-size: 16px
+            line-height: 18px

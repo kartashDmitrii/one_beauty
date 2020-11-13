@@ -69,3 +69,16 @@ img
     margin: 0 0 10px
   *:last-child
     margin-bottom: 0
+
+section.wrapper
+  position: fixed
+  width: 100vw
+  height: 100vh
+  top: 0
+  left: 0
+  z-index: 10
+  background: rgba(0,0,0,.6)
+  cursor: pointer
+  display: none
+  &.active
+    display: block

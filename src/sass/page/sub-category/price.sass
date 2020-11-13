@@ -1,4 +1,4 @@
-section.price
+section.prices
   display: flex
   flex-direction: column
   .section-title
@@ -7,8 +7,13 @@ section.price
     display: flex
     align-items: center
     justify-content: space-between
+    @media (max-width: 767px)
+      flex-direction: column
     .info
       flex: 1
+      @media (max-width: 767px)
+        width: 100%
+        margin-bottom: 15px
       ul
         display: flex
         flex-direction: column
@@ -18,10 +23,14 @@ section.price
         li
           display: flex
           justify-content: space-between
-          align-items:
+          align-items: center
           padding-bottom: 20px
           margin-bottom: 42px
           border-bottom: 1px solid $second-additional-color
+          @media (max-width: 480px)
+            flex-direction: column
+            align-items: flex-start
+            margin-bottom: 20px
           &:last-child
             margin-bottom: 0
           a
@@ -29,6 +38,10 @@ section.price
             font-size: 20px
             line-height: 23px
             color: $first-additional-color
+            padding-right: 10px
+            flex: 1
+            @media (max-width: 480px)
+              margin-bottom: 10px
             &:hover
               text-decoration: none
           p
@@ -38,6 +51,7 @@ section.price
             line-height: 19px
             font-feature-settings: 'pnum' on, 'lnum' on
             color: $text-color
+            text-align: right
     .sale
       margin-left: 125px
       width: 445px
@@ -46,6 +60,13 @@ section.price
       box-sizing: border-box
       transition: all .3s
       background: $first-additional-color
+      @media (max-width: 1024px)
+        margin-left: 25px
+        padding: 40px
+        width: 325px
+      @media (max-width: 767px)
+        width: 100%
+        margin: 0
       .btn
         background: $second-additional-color
         color: $text-color

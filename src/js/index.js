@@ -1,6 +1,9 @@
 import Tabs from "./components/tabs";
 import HeaderBurger from "./components/global/headerBurger";
 import headerLanguage from "./components/global/headerLanguage";
+import Counters from "./components/global/counters";
+import hideList from "./components/hideList";
+import popupFunc from "./popupFunc";
 
 if (document.querySelector('.slider-full-page')){
     document.querySelectorAll('.slider-full-page').forEach( slider => {
@@ -14,13 +17,13 @@ if (document.querySelector('.slider-full-page')){
                 1024: 2
             },
             startIndex: 1,
-            draggable: false,
+            draggable: window.screen.width < 767,
             multipleDrag: true,
             threshold: 20,
             loop: false,
             rtl: false,
             onInit: function (){
-                if (window.screen.width < 767) {
+                if (window.screen.width < 767 || this.selector.parentNode.classList.contains('initial')) {
                     this.selector.style.overflow = 'initial'
                 }
                 this.selector.querySelectorAll('.slide').forEach( (elem, index) => {
@@ -30,6 +33,7 @@ if (document.querySelector('.slider-full-page')){
                     this.selector.closest('.tab').querySelector('.slider-btns .dots').appendChild(dot);
                     dot.addEventListener('click', ()=>{siema.goTo(index)})
                 });
+                this.selector.closest('.tab').querySelectorAll('.dot')[this.currentSlide].classList.add('current')
                 this.selector.closest('.tab').querySelector('.slider-btns .btn-left').addEventListener('click', ()=>{siema.prev()});
                 this.selector.closest('.tab').querySelector('.slider-btns .btn-right').addEventListener('click', ()=>{siema.next()})
             },
@@ -126,3 +130,22 @@ if (document.querySelector('#video')) {
         document.querySelector('#video').style.minHeight = `${Math.round(.45 * document.querySelector('#video').offsetWidth)}px`
     })
 }
+if (document.querySelector('section.achievements .count')) {
+    document.querySelectorAll('section.achievements .count').forEach(elem => {
+        function checkHeight(){
+            if (elem.getBoundingClientRect().top <= window.screen.height){
+                window.removeEventListener('scroll', checkHeight);
+                new Counters(elem, 400);
+            }
+        }
+        window.addEventListener('scroll', checkHeight);
+    })
+}
+if (document.querySelector('section.questions .elem')){
+    document.querySelectorAll('section.questions .elem').forEach( elem => {
+        new hideList(elem)
+    })
+}
+document.querySelectorAll('[data-popup]').forEach( elem => {
+    new popupFunc(elem, document.querySelector(`.popup.${elem.dataset.popup}`));
+});

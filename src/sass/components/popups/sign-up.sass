@@ -1,0 +1,76 @@
+.sign-up.popup, .vacancy.popup
+  width: 100%
+  max-width: 540px
+  height: max-content
+  max-height: calc(100vh - 100px)
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  margin: auto
+  background: #FFFFFF
+  z-index: 11
+  display: none
+  flex-direction: column
+  align-items: center
+  padding: 45px 70px 50px
+  box-sizing: border-box
+  cursor: auto
+  @media (max-width: 767px)
+    padding: 20px 40px 25px
+  @media (max-width: 576px)
+    padding: 20px 30px
+    max-width: none
+    max-height: calc(100vh - 15px)
+  &.active
+    display: flex
+  .section-title
+    font-size: 32px
+    line-height: 28px
+    margin-bottom: 50px
+    text-align: center
+  form
+    width: 100%
+    display: flex
+    flex-direction: column
+    label
+      width: 100%
+      display: flex
+      flex-direction: column
+      font-size: 18px
+      line-height: 28px
+      color: #c4c4c4
+      input
+        outline: none
+        border: none
+        border-bottom: 2px solid $second-additional-color
+        padding-bottom: 10px
+        font-size: 18px
+        line-height: 28px
+        margin-bottom: 35px
+        &::placeholder
+          color: #c4c4c4
+      textarea
+        height: 125px
+        padding: 5px
+        margin-top: 10px
+        outline: none
+        border: 2px solid $second-additional-color
+        resize: none
+        font-size: 18px
+        line-height: 28px
+        margin-bottom: 35px
+    .btn
+      width: 100%
+  .close
+    position: absolute
+    width: 12px
+    height: 12px
+    cursor: pointer
+    top: 35px
+    right: 35px
+    background: url("../img/svg/close.svg") center center / 100% 100% no-repeat
+    @media (max-width: 767px)
+      top: 15px
+      right: 15px
